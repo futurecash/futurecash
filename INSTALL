@@ -1,0 +1,9 @@
+Building FutureCash
+
+See doc/readme-qt.rst for instructions on building FutureCash QT,
+the intended-for-end-users, nice-graphical-interface, reference
+implementation of FutureCash.
+
+See doc/build-*.txt for instructions on building futurecashd,
+the intended-for-services, no-graphical-interface, reference
+implementation of FutureCash.
