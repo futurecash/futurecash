@@ -238,7 +238,7 @@ public:
         hashGenesisBlock = genesis.GetHash();
         nDefaultPort = 18444;
         strDataDir = "regtest";
-        cout << "regtest genesis.GetHash(): " << genesis.GetHash().ToString() << endl;
+//        cout << "regtest genesis.GetHash(): " << genesis.GetHash().ToString() << endl;
         assert(hashGenesisBlock == uint256("0xee49bd39ff3183e373d488b94fc3f22201c0357b312aa6447612bffba388a06e"));
 
         vSeeds.clear();  // Regtest mode doesn't have any DNS seeds.
