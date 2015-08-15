@@ -80,12 +80,16 @@ public:
 
     int64_t StakeCoinYearReward(int nHeight) const {
         /*
-        Blocks 2780 - 4320 - 10% 24h
-        Blocks 4321 - 5760 - 5% 24h
-        Blocks 5761 - 7200 - 20% 24h
-        Blocks 7201 - 8640 - 10% 24h
-        Blocks 8641 - 10080 - 30% 24h
-        Blocks > 10080 - 20% 1Y
+        Blocks  2780 -  4320 - 10% annual
+        Blocks  4321 -  5760 -  5% annual
+        Blocks  5761 -  7200 - 20% annual
+        Blocks  7201 -  8640 - 10% annual
+        Blocks  8641 - 10080 - 10% daily
+        Blocks 10081 - 11520 -  5% daily
+        Blocks 11521 - 12960 - 20% daily
+        Blocks 12961 - 14400 - 10% daily
+        Blocks 14401 - 15840 - 30% daily
+        Blocks 15841 > ...   - 20% annual
         */
 
         if (nHeight < 4320)
@@ -97,7 +101,15 @@ public:
         else if (nHeight < 8640)
             return (10 * CENT);
         else if (nHeight < 10080)
-            return (30 * CENT);
+            return (10 * CENT * 365);
+        else if (nHeight < 11520)
+            return (5 * CENT * 365);
+        else if (nHeight < 12960)
+            return (20 * CENT * 365);
+        else if (nHeight < 14400)
+            return (10 * CENT * 365);
+        else if (nHeight < 15840)
+            return (30 * CENT * 365);
 
         return nStakeCoinYearReward;
     }
